@@ -17,69 +17,47 @@ function getCarsEvents(e) {
         const events = JSON.parse(response).events.event;
         $("#mainBody").empty();
 
-        for (let i = 0; i < events.length; i++) {
-            const event = events[i];
-            console.log(event)
-            const image = event.image
-                // APPEND CARD FOR EVENT
-            $("#mainBody").append(`
-            <!-- Card -->
-<div class="card">
+        const chunkedEvents = chunk(3)(events);
+        console.log(chunkedEvents)
+        $("#mainBody").append(`<div class="row" id="eventsRow"></div>`)
 
-  <!-- Card image -->
-  <img class="card-img-top" src="${event.image && event.image.url || "https://mdbootstrap.com/img/Photos/Others/images/43.jpg"}" alt="Card image cap">
-
-  <!-- Card content -->
-  <div class="card-body">
-
-    <!-- Title -->
-    <h4 class="card-title"><a>${event.title}</a></h4>
-    <!-- Text -->
-    <p class="card-text">${event.description}</p>
-    <!-- Button -->
-    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#${event.owner}${event.postalcode}">More Info</a>
-
-  </div>
-
-</div>
-<!-- Card -->`)
-                // APPEND MODAL FOR EVENT INFO
-            $("#mainBody").append(`
-<!-- Modal -->
-<div class="modal fade" id="${event.owner}${event.postalcode}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${event.title}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ${event.description}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="save${event.owner}${event.postalcode}">Add to My Favorites</button>
-      </div>
-    </div>
-  </div>
-</div>`)
-            $(`#save${event.owner}${event.postalcode}`).on('click', function() {
-                saveToFavorites(event)
-            })
+        for (let i = 0; i < chunkedEvents.length; i++) {
+            $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`)
 
 
-
-            //$("#main").append()
+            for (let j = 0; j < chunkedEvents[i].length; j++) {
+                const event = chunkedEvents[i][j];
+                // if the event has an image, use the image for the card; otherwise use a default image
+                const imageUrl = event.image && event.image.url || "https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
+                    // APPEND CARD FOR EVENT
+                $(`#eventsCol-${i}`).append(
+                        EventCard(
+                            (imageUrl),
+                            event.title,
+                            event.description,
+                            `${event.owner}${event.postalcode}`
+                        ))
+                    // APPEND MODAL FOR EVENT INFO
+                $("#mainBody").append(
+                        EventModal(
+                            `${event.owner}${event.postalcode}`,
+                            event.title,
+                            event.description
+                        ))
+                    // add a click handler to the modal "save to favorites" button
+                $(`#save${event.owner}${event.postalcode}`).on('click', function() {
+                    saveToFavorites(event)
+                })
+            }
         }
+
+
     });
 };
 
 
 function saveToFavorites(event) {
-    localStorage.setItem(`boredAppEvent-${event.title}`, JSON.stringify(event))
+    localStorage.setItem(`neverBoredAppEvent-${event.title}`, JSON.stringify(event))
 }
 
 $("#festival").on("click", function(e) {
@@ -118,3 +96,57 @@ $("#festival").on("click", function(e) {
         }
     });
 });
+
+// template for building an event card component
+function EventCard(imageUrl, title, description, id) {
+    return `
+    <!-- Card -->
+<div class="card mt-5">
+
+<!-- Card image -->
+<img class="card-img-top" src="${imageUrl}" alt="Card image cap">
+
+<!-- Card content -->
+<div class="card-body">
+
+<!-- Title -->
+<h4 class="card-title"><a>${title}</a></h4>
+<!-- Text -->
+<p class="card-text">${description}</p>
+<!-- Button -->
+<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#${id}">More Info</a>
+
+</div>
+
+</div>
+<!-- Card -->`
+}
+
+// template for building an event modal component
+function EventModal(id, title, description) {
+    return `
+<!-- Modal -->
+<div class="modal fade" id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${title}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ${description}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save${id}">Add to My Favorites</button>
+      </div>
+    </div>
+  </div>
+</div>`
+}
+
+// FUNCTION FOR SPLITTING ARRAY INTO EVEN CHUNKS
+const chunk = s => a => (!a.length ? [] : [a.slice(0, s)].concat(chunk(s)(a.slice(s))));
