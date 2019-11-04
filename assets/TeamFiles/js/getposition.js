@@ -1,8 +1,8 @@
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition, function () { console.log('Permission Denied'); })
   } else {
-    alert("Geolocation is not supported by this browser.")
+    alert("Geolocation is not supported by this browser.");
   }
 }
 
