@@ -47,12 +47,12 @@
                             <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-filter pr-1"></i>Events by Category<i class="fas fa-angle-down rotate-icon"></i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-ticket-alt pr-1"></i>Shows</a></li>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-football-ball pr-1"></i>Sports</a></li>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-hotel pr-1"></i>Festivals</a></li>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-music pr-1"></i>Music</a></li>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-film pr-1"></i>Movies</a></li>
-                                        <li><a href="#" class="waves-effect"><i class="fas fa-utensils pr-1"></i>Food</a></li>
+                                        <li><a href="#" id="play" class="waves-effect"><i class="fas fa-ticket-alt pr-1"></i>Shows</a></li>
+                                        <li><a href="#" id="sport" class="waves-effect"><i class="fas fa-football-ball pr-1"></i>Sports</a></li>
+                                        <li><a href="#" id="festival" class="waves-effect"><i class="fas fa-hotel pr-1"></i>Festivals</a></li>
+                                        <li><a href="#" id="musicTwo" class="waves-effect"><i class="fas fa-music pr-1"></i>Music</a></li>
+                                        <li><a href="#" id="movies" class="waves-effect"><i class="fas fa-film pr-1"></i>Movies</a></li>
+                                        <li><a href="#" id="food" class="waves-effect"><i class="fas fa-utensils pr-1"></i>Food</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -113,195 +113,12 @@
 
     <!--Main Layout-->
     <main>
+        
         <div class="container" id="mainBody">
-            <div class="row">
-                <div class="col">
+            <!-- delete after -->
+            
 
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-archway"></i> Shows</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="musicTwo">see music events</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-                </div>
-                <div class="col">
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Cars</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="seeCarsEvents">See Car Events</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-
-                </div>
-                <div class="col">
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="sport">see sport events</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower mt-5 eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="movies">See Movies playing</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-                </div>
-                <div class="col">
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower mt-5 eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="play">see Plays</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-                </div>
-                <div class="col">
-                    <!-- Card Narrower -->
-                    <div class="card card-cascade narrower mt-5 eventCard">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade">
-
-                            <!-- Label -->
-                            <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
-                            <!-- Title -->
-                            <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                            <!-- Text -->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                            <!-- Button -->
-                            <a class="btn btn-unique" id="food">Food location</a>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Narrower -->
-
-                </div>
-
-
-            </div>
+                
         </div>
 
 
