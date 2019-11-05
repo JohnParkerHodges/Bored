@@ -20,7 +20,8 @@ function searchClick(search){
 
     })
 }
-function searchZip(search){
+$('#zip').click(function () {
+    var search = $('#zipcode').val()
     const queryURL = "https://maps.googleapis.com/maps/api/geocode/json"
     jQuery.ajaxPrefilter((options)=>{
         if(options.crossDomain && jQuery.support.cors){
@@ -39,4 +40,4 @@ function searchZip(search){
         console.log(response)
 
     })
-}
+});
