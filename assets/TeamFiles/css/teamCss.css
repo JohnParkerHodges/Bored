@@ -1,0 +1,76 @@
+.navbar {
+    background-color: rgb(47, 47, 162) !important;
+}
+li>a, li>i, a.button-collapse>i{
+    color: #ebebd3 !important;
+    font-weight: bold;
+}
+a.button-collapse>i {
+    position: relative;
+    bottom: 3px;
+    left: 2px;
+}
+.navbarTitle {
+    font-family: 'Fontdiner Swanky', cursive !important;
+    color: #ff4457;
+    font-size: larger;
+}
+
+.side-nav {
+    background-color: #ebebd3;
+}
+.side-nav a {
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.9rem !important;
+    font-weight: bold;
+}
+
+p.category {
+    margin-bottom: 5px !important;
+    color: #413c58;
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+}
+a.profileLink {
+    color: #413c58 !important;
+}
+    a.profileLink:hover {
+    color: #577399 !important;
+}
+
+a.category {
+    margin-bottom: 0.75rem !important;
+    margin-left: 13px !important;
+    color: #ff4457 !important;    
+    font-weight: bold;
+}
+    a.category:hover {
+        color: #577399 !important;
+    }
+
+.side-nav .collapsible-body a {
+    color: #ff4457 !important;
+    margin-left: 13px !important;
+    padding-left: 20px !important;
+    font-weight: bold;
+}
+
+    .side-nav .collapsible-body a:hover {
+        color: #577399 !important;
+    }
+
+li .collapsible-header {
+    color: #413c58 !important;
+    font-size: 0.9rem !important;
+    padding: 0 !important;
+    font-weight: bold;
+}
+    li .collapsible-header.active {
+        color: #577399 !important;
+        font-weight: bold;
+    }
+
+.dashTitles {
+    color: #ff4457 !important;
+}
