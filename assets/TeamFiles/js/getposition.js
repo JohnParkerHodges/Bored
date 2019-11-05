@@ -1,3 +1,4 @@
+// simple code that gets the user's location and gives a console log if permission is denied
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, function () { console.log('Permission Denied'); })

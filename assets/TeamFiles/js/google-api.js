@@ -1,4 +1,5 @@
-function searchClick(search){
+//  function searches for locations by name
+function searchPlace(search){
     const queryURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
     jQuery.ajaxPrefilter((options)=>{
         if(options.crossDomain && jQuery.support.cors){
@@ -20,6 +21,7 @@ function searchClick(search){
 
     })
 }
+//  function coverts a zipcode into location data
 function searchZip(search){
     const queryURL = "https://maps.googleapis.com/maps/api/geocode/json"
     jQuery.ajaxPrefilter((options)=>{
