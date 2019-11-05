@@ -1,4 +1,6 @@
 $("#musicTwo").on("click", function(e) {
+
+  //code using format in the apis.js
   /*const queryURL =
       "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
       keyWord +
@@ -76,11 +78,8 @@ $("#musicTwo").on("click", function(e) {
     for (var i =0; i < response._embedded.events.length; i++) {
         const name = $('<h1>').text(response._embedded.events[i].name)
         const info =  $('<h1>').text(response._embedded.events[i].info)
-        const newPoster = $("<img>").attr("src", response._embedded.events[i].images[2].url)
-        $("#mainBody").append(name, info, newPoster)
-        
-    
-
+        const newImage = $("<img>").attr("src", response._embedded.events[i].images[2].url)
+        $("#mainBody").append(name, info, newImage)    
     }
 
    
