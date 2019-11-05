@@ -1,3 +1,4 @@
+/* NavBars Styling */
 .navbar {
     background-color: rgb(47, 47, 162) !important;
 }
@@ -70,7 +71,7 @@ li .collapsible-header {
         color: #577399 !important;
         font-weight: bold;
     }
-
+/* Dashboard CSS */
 .dashTitles {
     color: #ff4457 !important;
 }
