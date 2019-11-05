@@ -16,7 +16,6 @@ function getCarsEvents(e) {
   }).then(function(response) {
     const events = JSON.parse(response).events.event;
     $("#mainBody").empty();
-       
     const chunkedEvents = chunk(3)(events);
     console.log(chunkedEvents);
     $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
@@ -63,8 +62,118 @@ function saveToFavorites(event) {
   );
 }
 
-$("#musicTwo").on("click", function(e) {
+$("#musicTwo").on("click", function() {
   const keyWord = "music";
+  const queryURL =
+    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
+    keyWord +
+    "&city=charlotte&startDate=today&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
+
+  jQuery.ajaxPrefilter(options => {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+    }
+  });
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    
+    const events = response._embedded.events;
+    $("#mainBody").empty();
+
+    const chunkedEvents = chunk(3)(events);
+    $("#mainBody").append(`<div class ="row" id="eventsRow"></div>`);
+
+    for (let i = 0; i < chunkedEvents.length; i++) {
+      $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+
+      for (let j = 0; j < chunkedEvents[i].length; j++) {
+        const event = chunkedEvents[i][j];
+        const imageUrl = response._embedded.events[i].images[2].url;
+        $(`#eventsCol-${i}`).append(
+          EventCardTwo(
+            imageUrl,
+            event.name,
+            event.info,
+            `${event.owner}${event.postalcode}`
+          )
+        );
+        // APPEND MODAL FOR EVENT INFO
+        $("#mainBody").append(
+          EventModalTwo(
+            `${event.owner}${event.postalcode}`,
+            event.name,
+            event.info
+          )
+        );
+        // add a click handler to the modal "save to favorites" button
+        $(`#save${event.owner}${event.postalcode}`).on("click", function() {
+          saveToFavorites(event);
+        });
+      }
+    }
+  });
+});
+
+$("#sport").on("click", function(e) {
+  const keyWord = "sport";
+  const queryURL =
+    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
+    keyWord +
+    "&city=charlotte&startDate=today&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
+
+  jQuery.ajaxPrefilter(options => {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+    }
+  });
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    
+    const events = response._embedded.events;
+    $("#mainBody").empty();
+
+    const chunkedEvents = chunk(3)(events);
+    $("#mainBody").append(`<div class ="row" id="eventsRow"></div>`);
+
+    for (let i = 0; i < chunkedEvents.length; i++) {
+      $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+
+      for (let j = 0; j < chunkedEvents[i].length; j++) {
+        const event = chunkedEvents[i][j];
+        const imageUrl = response._embedded.events[i].images[2].url;
+        $(`#eventsCol-${i}`).append(
+          EventCardTwo(
+            imageUrl,
+            event.name,
+            event.info,
+            `${event.owner}${event.postalcode}`
+          )
+        );
+        // APPEND MODAL FOR EVENT INFO
+        $("#mainBody").append(
+          EventModalTwo(
+            `${event.owner}${event.postalcode}`,
+            event.name,
+            event.info
+          )
+        );
+        // add a click handler to the modal "save to favorites" button
+        $(`#save${event.owner}${event.postalcode}`).on("click", function() {
+          saveToFavorites(event);
+        });
+      }
+    }
+  });
+});
+
+$("#movies").on("click", function(e) {
+  const keyWord = "movies";
   const queryURL =
     "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
     keyWord +
@@ -121,266 +230,118 @@ $("#musicTwo").on("click", function(e) {
   });
 });
 
+$("#play").on("click", function(e) {
+  const keyWord = "play";
+  const queryURL =
+    "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
+    keyWord +
+    "&city=charlotte&startDate=today&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
 
-$("#sport").on("click", function(e) {
-    const keyWord = "sport";
-    const queryURL =
-      "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
-      keyWord +
-      "&location=charlotte&date=Future";
-  
-    jQuery.ajaxPrefilter(options => {
-      if (options.crossDomain && jQuery.support.cors) {
-        options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
-      }
-    });
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      const events = JSON.parse(response).events.event;
-      $("#mainBody").empty();
-  
-      const chunkedEvents = chunk(3)(events);
-      console.log(chunkedEvents);
-      $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
-  
-      for (let i = 0; i < chunkedEvents.length; i++) {
-        $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
-  
-        for (let j = 0; j < chunkedEvents[i].length; j++) {
-          const event = chunkedEvents[i][j];
-          // if the event has an image, use the image for the card; otherwise use a default image
-          const imageUrl =
-            (event.image && event.image.url) ||
-            "https://mdbootstrap.com/img/Photos/Others/images/43.jpg";
-          // APPEND CARD FOR EVENT
-          $(`#eventsCol-${i}`).append(
-            EventCard(
-              imageUrl,
-              event.title,
-              event.description,
-              `${event.owner}${event.postalcode}`
-            )
-          );
-          // APPEND MODAL FOR EVENT INFO
-          $("#mainBody").append(
-            EventModal(
-              `${event.owner}${event.postalcode}`,
-              event.title,
-              event.description
-            )
-          );
-          // add a click handler to the modal "save to favorites" button
-          $(`#save${event.owner}${event.postalcode}`).on("click", function() {
-            saveToFavorites(event);
-          });
-        }
-      }
-    });
+  jQuery.ajaxPrefilter(options => {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+    }
   });
 
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    
+    const events = response._embedded.events;
+    $("#mainBody").empty();
 
-  $("#movies").on("click", function(e) {
-    const keyWord = "movies";
-    const queryURL =
-      "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
-      keyWord +
-      "&location=charlotte&date=Future";
-  
-    jQuery.ajaxPrefilter(options => {
-      if (options.crossDomain && jQuery.support.cors) {
-        options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+    const chunkedEvents = chunk(3)(events);
+    $("#mainBody").append(`<div class ="row" id="eventsRow"></div>`);
+
+    for (let i = 0; i < chunkedEvents.length; i++) {
+      $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+
+      for (let j = 0; j < chunkedEvents[i].length; j++) {
+        const event = chunkedEvents[i][j];
+        const imageUrl = response._embedded.events[i].images[2].url;
+        $(`#eventsCol-${i}`).append(
+          EventCardTwo(
+            imageUrl,
+            event.name,
+            event.info,
+            `${event.owner}${event.postalcode}`
+          )
+        );
+        // APPEND MODAL FOR EVENT INFO
+        $("#mainBody").append(
+          EventModalTwo(
+            `${event.owner}${event.postalcode}`,
+            event.name,
+            event.info
+          )
+        );
+        // add a click handler to the modal "save to favorites" button
+        $(`#save${event.owner}${event.postalcode}`).on("click", function() {
+          saveToFavorites(event);
+        });
       }
-    });
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      const events = JSON.parse(response).events.event;
-      $("#mainBody").empty();
-  
-      const chunkedEvents = chunk(3)(events);
-      console.log(chunkedEvents);
-      $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
-  
-      for (let i = 0; i < chunkedEvents.length; i++) {
-        $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
-  
-        for (let j = 0; j < chunkedEvents[i].length; j++) {
-          const event = chunkedEvents[i][j];
-          // if the event has an image, use the image for the card; otherwise use a default image
-          const imageUrl =
-            (event.image && event.image.url) ||
-            "https://mdbootstrap.com/img/Photos/Others/images/43.jpg";
-          // APPEND CARD FOR EVENT
-          $(`#eventsCol-${i}`).append(
-            EventCard(
-              imageUrl,
-              event.title,
-              event.description,
-              `${event.owner}${event.postalcode}`
-            )
-          );
-          // APPEND MODAL FOR EVENT INFO
-          $("#mainBody").append(
-            EventModal(
-              `${event.owner}${event.postalcode}`,
-              event.title,
-              event.description
-            )
-          );
-          // add a click handler to the modal "save to favorites" button
-          $(`#save${event.owner}${event.postalcode}`).on("click", function() {
-            saveToFavorites(event);
-          });
-        }
+    }
+  });
+});
+
+$("#food").on("click", function(e) {
+  const keyWord = "food";
+  const queryURL =
+    "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
+    keyWord +
+    "&location=charlotte&date=Future";
+
+  jQuery.ajaxPrefilter(options => {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+    }
+  });
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    const events = JSON.parse(response).events.event;
+    $("#mainBody").empty();
+
+    const chunkedEvents = chunk(3)(events);
+    console.log(chunkedEvents);
+    $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
+
+    for (let i = 0; i < chunkedEvents.length; i++) {
+      $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+
+      for (let j = 0; j < chunkedEvents[i].length; j++) {
+        const event = chunkedEvents[i][j];
+        // if the event has an image, use the image for the card; otherwise use a default image
+        const imageUrl =
+          (event.image && event.image.url) ||
+          "https://mdbootstrap.com/img/Photos/Others/images/43.jpg";
+        // APPEND CARD FOR EVENT
+        $(`#eventsCol-${i}`).append(
+          EventCard(
+            imageUrl,
+            event.title,
+            event.description,
+            `${event.owner}${event.postalcode}`
+          )
+        );
+        // APPEND MODAL FOR EVENT INFO
+        $("#mainBody").append(
+          EventModal(
+            `${event.owner}${event.postalcode}`,
+            event.title,
+            event.description
+          )
+        );
+        // add a click handler to the modal "save to favorites" button
+        $(`#save${event.owner}${event.postalcode}`).on("click", function() {
+          saveToFavorites(event);
+        });
       }
-    });
-  })
-
-
-
-  $("#play").on("click", function(e) {
-    const keyWord = "play";
-    const queryURL =
-      "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
-      keyWord +
-      "&location=charlotte&date=Future";
-  
-    jQuery.ajaxPrefilter(options => {
-      if (options.crossDomain && jQuery.support.cors) {
-        options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
-      }
-    });
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      const events = JSON.parse(response).events.event;
-      $("#mainBody").empty();
-  
-      const chunkedEvents = chunk(3)(events);
-      console.log(chunkedEvents);
-      $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
-  
-      for (let i = 0; i < chunkedEvents.length; i++) {
-        $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
-  
-        for (let j = 0; j < chunkedEvents[i].length; j++) {
-          const event = chunkedEvents[i][j];
-          // if the event has an image, use the image for the card; otherwise use a default image
-          const imageUrl =
-            (event.image && event.image.url) ||
-            "https://mdbootstrap.com/img/Photos/Others/images/43.jpg";
-          // APPEND CARD FOR EVENT
-          $(`#eventsCol-${i}`).append(
-            EventCard(
-              imageUrl,
-              event.title,
-              event.description,
-              `${event.owner}${event.postalcode}`
-            )
-          );
-          // APPEND MODAL FOR EVENT INFO
-          $("#mainBody").append(
-            EventModal(
-              `${event.owner}${event.postalcode}`,
-              event.title,
-              event.description
-            )
-          );
-          // add a click handler to the modal "save to favorites" button
-          $(`#save${event.owner}${event.postalcode}`).on("click", function() {
-            saveToFavorites(event);
-          });
-        }
-      }
-    });
-  })
-
-  $("#food").on("click", function(e) {
-    const keyWord = "food";
-    const queryURL =
-      "https://api.eventful.com/json/events/search?app_key=hRDPbW8GBDtjwWC4&keywords=" +
-      keyWord +
-      "&location=charlotte&date=Future";
-  
-    jQuery.ajaxPrefilter(options => {
-      if (options.crossDomain && jQuery.support.cors) {
-        options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
-      }
-    });
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      const events = JSON.parse(response).events.event;
-      $("#mainBody").empty();
-  
-      const chunkedEvents = chunk(3)(events);
-      console.log(chunkedEvents);
-      $("#mainBody").append(`<div class="row" id="eventsRow"></div>`);
-  
-      for (let i = 0; i < chunkedEvents.length; i++) {
-        $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
-  
-        for (let j = 0; j < chunkedEvents[i].length; j++) {
-          const event = chunkedEvents[i][j];
-          // if the event has an image, use the image for the card; otherwise use a default image
-          const imageUrl =
-            (event.image && event.image.url) ||
-            "https://mdbootstrap.com/img/Photos/Others/images/43.jpg";
-          // APPEND CARD FOR EVENT
-          $(`#eventsCol-${i}`).append(
-            EventCard(
-              imageUrl,
-              event.title,
-              event.description,
-              `${event.owner}${event.postalcode}`
-            )
-          );
-          // APPEND MODAL FOR EVENT INFO
-          $("#mainBody").append(
-            EventModal(
-              `${event.owner}${event.postalcode}`,
-              event.title,
-              event.description
-            )
-          );
-          // add a click handler to the modal "save to favorites" button
-          $(`#save${event.owner}${event.postalcode}`).on("click", function() {
-            saveToFavorites(event);
-          });
-        }
-      }
-    });
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+  });
+});
 
 $("#festival").on("click", function(e) {
   console.log("click");
@@ -460,6 +421,56 @@ function EventModal(id, title, description) {
       </div>
       <div class="modal-body">
         ${description}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save${id}">Add to My Favorites</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
+function EventCardTwo(imageUrl, name, info, id) {
+  return `
+    <!-- Card -->
+<div class="card mt-5">
+
+<!-- Card image -->
+<img class="card-img-top" src="${imageUrl}" alt="Card image cap">
+
+<!-- Card content -->
+<div class="card-body">
+
+<!-- Title -->
+<h4 class="card-title"><a>${name}</a></h4>
+<!-- Text -->
+<p class="card-text">${info}</p>
+<!-- Button -->
+<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#${id}">More Info</a>
+
+</div>
+
+</div>
+<!-- Card -->`;
+}
+
+// template for building an event modal component
+function EventModalTwo(id, name, info) {
+  return `
+<!-- Modal -->
+<div class="modal fade" id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${name}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ${info}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
