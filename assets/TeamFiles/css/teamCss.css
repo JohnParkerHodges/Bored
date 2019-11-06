@@ -1,6 +1,8 @@
 html,
 body {
     font-family: 'Barlow Condensed', sans-serif;
+    background-color: #f3f2f2;
+    font-size: 18px;
 }
 
 
@@ -18,12 +20,15 @@ a.button-collapse>i {
     font-size: larger;
 }
 
-.side-nav a {
-    height: 1rem;
-    line-height: 1.25rem;
-    font-size: 1rem;
+a.category {
+    padding-left: 20px;
 }
 
+<<<<<<< HEAD
+a.category>i {
+position: relative;
+    right: 5px;
+=======
 li .collapsible-header {
     font-size: 0.9rem !important;
     padding: 0 !important;
@@ -31,4 +36,5 @@ li .collapsible-header {
 
 .whiteCard {
     background-color: white;
+>>>>>>> a449035d6d49b97edba23fbd27910406a61b70ca
 }
