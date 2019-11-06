@@ -77,5 +77,5 @@ function LogInValidationAlert() {
 }
 
 function LogInRedirect() {
-    window.location.replace('./Main.html');
+    window.location.replace('./index.html');
 }
