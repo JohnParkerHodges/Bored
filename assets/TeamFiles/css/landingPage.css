@@ -58,10 +58,6 @@ div.landingPageContent p {
     border: #ffffed solid 2px;
     color: #ffffed;
 }
-/* .landingPageContent>a.btn:not() {
-    border: #ffffed 2px solid;
-    border-radius: unset;
-} */
 
 .map-container-5 {
     overflow: hidden;
