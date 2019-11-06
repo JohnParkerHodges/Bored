@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 function checkUserAuth() {
     if (!JSON.parse(localStorage.getItem('neverBoredApp-LoggedIn')).isLoggedIn) {
-        window.location.replace('./landingPage.html');
+        window.location.replace('./index.html');
     }
 }
 
@@ -63,7 +63,7 @@ function userLogOut() {
         isLoggedIn: false,
         userName: null
     }))
-    window.location.replace('./landingPage.html');
+    window.location.replace('./index.html');
 }
 
 // Themes
