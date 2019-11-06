@@ -16,12 +16,20 @@ We chose the following framework and APIs:
 3. Eventful
 4. Ticketmaster
 
-!Bored allows the user to input their location by allowing the application to grab geolocation or typing in a zip code and then display all events in that location within 24 hours to solve their boredom.
+!Bored allows the user to input their location by allowing the application to grab geolocation or typing in a zip code and then display all upcoming events in that location to solve their boredom.
 
-**For extra features we added:**
+**Extra features we added:**
 - Ability to filter events by the categories of Shows, Sports, Festivals, Music, Movies, and Food.
-- User Profiles with the ability to sign in, choose a visual theme for the site, saved
+- User Profiles with the ability to sign in/log out, choose a visual theme for the site, saved events access
+
 
 ## Challenges
-- Focusing on the MVP...lots of time spent on the functionality of icebox features.
-- 
+- Focusing on the MVP...lots of time spent on the functionality of icebox features, which lead to superfluous frustration and breaking the MVP
+
+
+## Future Development (Embrace the ICEBOX!)
+- Filtering by location radius, date and time
+- Ability to have a password & change the password
+- FAQ/Troubleshooting Information
+- Functional links to company social media
+- Functional Contact page that users can submit feedback on app functionality
