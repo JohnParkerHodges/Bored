@@ -5,12 +5,24 @@ $("#userSignUpButton").on('click', function() {
     const formUserPassword = $("#userSignUpPassword").val();
 
     if (localStorage.getItem(`neverBoredApp-User-${formUserName}`)) {
-        localStorage.setItem('neverBoredApp-LoggedIn', false)
+        localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+            isLoggedIn: false,
+            userName: null
+        }))
         SignUpUserAlreadyExistsAlert();
     } else {
-        localStorage.setItem(`neverBoredApp-User-${formUserName}`, formUserPassword);
-        localStorage.setItem('neverBoredApp-LoggedIn', true)
-        window.location.replace('./Main.html');
+        const newUser = {
+            email: formUserName,
+            password: formUserPassword,
+            favorites: [],
+        };
+        localStorage.setItem(`neverBoredApp-User-${formUserName}`, JSON.stringify(newUser));
+
+        localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+            isLoggedIn: true,
+            userName: formUserName
+        }));
+        LogInRedirect();
     }
 });
 
@@ -18,18 +30,27 @@ $("#userLogInButton").on('click', function() {
     const formUserName = $("#userLogInEmail").val();
     const formUserPassword = $("#userLogInPassword").val();
 
-    const userPassFromLocalStorage = localStorage.getItem(`neverBoredApp-User-${formUserName}`)
+    const userPassFromLocalStorage = JSON.parse(localStorage.getItem(`neverBoredApp-User-${formUserName}`)).password;
 
     if (!userPassFromLocalStorage) {
-        localStorage.setItem('neverBoredApp-LoggedIn', false)
+        localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+            isLoggedIn: false,
+            userName: null
+        }));
         LogInValidationAlert();
     } else {
         if (userPassFromLocalStorage !== formUserPassword) {
-            localStorage.setItem('neverBoredApp-LoggedIn', false)
+            localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+                isLoggedIn: false,
+                userName: null
+            }));
             LogInValidationAlert();
         } else if (userPassFromLocalStorage === formUserPassword) {
-            localStorage.setItem('neverBoredApp-LoggedIn', true)
-            window.location.replace('./Main.html');
+            localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+                isLoggedIn: true,
+                userName: formUserName
+            }));
+            LogInRedirect();
         }
     }
 })
@@ -53,4 +74,8 @@ function LogInValidationAlert() {
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                         </div>`)
+}
+
+function LogInRedirect() {
+    window.location.replace('./Main.html');
 }
