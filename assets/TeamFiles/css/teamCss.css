@@ -24,6 +24,3 @@ li .collapsible-header {
     font-size: 0.9rem !important;
     padding: 0 !important;
 }
-    li .collapsible-header.active {
-        color: #577399 !important;
-    }

@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="./assets/mdb/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/mdb/css/mdb.css">
     <link rel="stylesheet" href="./assets/mdb/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <!-- TEAM STYLESHEETS -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Cherry+Cream+Soda|Fontdiner+Swanky&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Cherry+Cream+Soda|Fontdiner+Swanky&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/TeamFiles/css/teamCss.css">
     <link rel="stylesheet" href="./assets/TeamFiles/css/startPage.css">
 </head>
@@ -27,7 +30,8 @@
                 <!-- Logo -->
                 <li>
                     <div class="logo-wrapper waves-light">
-                        <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+                        <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png"
+                                class="img-fluid flex-center"></a>
                     </div>
                 </li>
                 <!--/. Logo -->
@@ -74,12 +78,11 @@
                                 </ul>
                             </div>
                         </li>
-                        <!-- User Profile Categories -->
+                        <!-- User Profile Modal Link -->
                         <li><a class="waves-effect" data-toggle="modal" data-target="#modalLRForm"><i class="far fa-user-circle pr-1"></i>Profile</a>
-
                     </ul>
-                    </li>
-                    <!--/. Side navigation links -->
+                </li>
+                <!--/. Side navigation links -->
             </ul>
             <div class="sidenav"></div>
         </div>
@@ -97,15 +100,17 @@
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-home pr-1"></i><span
-                                class="clearfix d-none d-sm-inline-block">Home</span></a>
+                            class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./userDash.html"><i class="fas fa-clipboard-list "></i> <span
-                                    class="clearfix d-none d-sm-inline-block"> Dashboard </span></a>
+
+                    <a class="nav-link" href="./userDash.html"><i class="fas fa-desktop pr-1"></i><span
+                            class="clearfix d-none d-sm-inline-block">Dashboard </span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span class="clearfix d-none d-sm-inline-block">Log Out</span></a>
+                    <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span
+                            class="clearfix d-none d-sm-inline-block">Log Out</span></a>
                 </li>
             </ul>
         </nav>
@@ -167,20 +172,22 @@
 
 
         <!-- User Modal -->
-        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <div id="userFavorites"></div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="userLogOut" onclick="userLogOut()">Log Out</button>
+                        <button type="button" class="btn btn-secondary" id="userLogOut" onclick="userLogOut()">Log
+                            Out</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
@@ -195,7 +202,8 @@
 
 
         <!--Modal: Login / Register Form-->
-        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog cascading-modal" role="document">
                 <!--Content-->
                 <div class="modal-content">
@@ -206,12 +214,14 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
-                                Account</a>
+                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                        class="fas fa-user mr-1"></i>
+                                    Account</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-fill-drip"></i>
-                                Theme</a>
+                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                        class="fas fa-fill-drip"></i>
+                                    Theme</a>
                             </li>
                         </ul>
 
@@ -227,7 +237,9 @@
 
                                         <!-- Card image -->
                                         <div class="view view-cascade overlay">
-                                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                                            <img class="card-img-top"
+                                                src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
+                                                alt="Card image cap">
                                             <a href="#!">
                                                 <div class="mask rgba-white-slight"></div>
                                             </a>
@@ -241,7 +253,8 @@
                                             <!-- Subtitle -->
                                             <h5 class="pb-2"><strong>Web Dev</strong></h5>
                                             <!-- Text -->
-                                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+                                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit
+                                                voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
 
                                             <!-- Linkedin -->
                                             <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
