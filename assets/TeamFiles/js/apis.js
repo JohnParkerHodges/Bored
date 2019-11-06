@@ -15,7 +15,7 @@ function makeEventfulClickHandler(divId, searchKeyword) {
         const googleQueryURL = "https://maps.googleapis.com/maps/api/geocode/json"
         jQuery.ajaxPrefilter((options) => {
             if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'http://uncc-cors-proxy.herokuapp.com/' + options.url;
+                options.url = 'https://uncc-cors-proxy.herokuapp.com/' + options.url;
             }
         })
         $.ajax({
@@ -36,7 +36,7 @@ function makeEventfulClickHandler(divId, searchKeyword) {
 
             jQuery.ajaxPrefilter(options => {
                 if (options.crossDomain && jQuery.support.cors) {
-                    options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+                    options.url = "https://uncc-cors-proxy.herokuapp.com/" + options.url;
                 }
             });
             $.ajax({
@@ -162,7 +162,7 @@ function makeTicketMasterClickHandler(divId, searchKeyword) {
         const queryURL = "https://maps.googleapis.com/maps/api/geocode/json"
         jQuery.ajaxPrefilter((options) => {
             if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'http://uncc-cors-proxy.herokuapp.com/' + options.url;
+                options.url = 'https://uncc-cors-proxy.herokuapp.com/' + options.url;
             }
         })
         $.ajax({
@@ -183,7 +183,7 @@ function makeTicketMasterClickHandler(divId, searchKeyword) {
 
             jQuery.ajaxPrefilter(options => {
                 if (options.crossDomain && jQuery.support.cors) {
-                    options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+                    options.url = "https://uncc-cors-proxy.herokuapp.com/" + options.url;
                 }
             });
 
