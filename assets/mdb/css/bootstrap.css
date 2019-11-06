@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -64,9 +64,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #413c58;
   text-align: left;
-  background-color: #577399 !important;
 }
 
 [tabindex="-1"]:focus {
@@ -365,7 +363,6 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Cherry Cream Soda', cursive;
   font-weight: 500;
   line-height: 1;
-  color: #577399;
 }
 
 h1, .h1 {
@@ -3445,7 +3442,7 @@ input[type="button"].btn-block {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
   background-color: #e9ecef;
   border: 1px solid #ced4da;
@@ -4339,7 +4336,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ebebd3;
+  background-color: #fffff0;
   background-clip: border-box;
   border: 1px solid rgba(47, 47, 162, 0.2);
   border-radius: 0.25rem;
@@ -4364,10 +4361,12 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
+  background-color: #fffff0;
 }
 
 .card-title {
   margin-bottom: 0.75rem;
+  color: #ff7a87;
 }
 
 .card-subtitle {
