@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="./assets/mdb/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <!-- TEAM STYLESHEETS -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Cherry+Cream+Soda|Fontdiner+Swanky&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/TeamFiles/css/teamCss.css">
+    <link rel="stylesheet" href="./assets/TeamFiles/css/startPage.css">
 </head>
 
-<body class="hidden-sn white-skin">
+<body class="hidden-sn test-skin">
 
     <!--Double navigation-->
     <header>
@@ -99,15 +101,12 @@
                                 class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
-
                     <a class="nav-link" href="./userDash.html"><i class="fas fa-clipboard-list "></i> <span
                                     class="clearfix d-none d-sm-inline-block"> Dashboard </span></a>
                 </li>
 
                 <li class="nav-item">
-
-                    <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span
-                                class="clearfix d-none d-sm-inline-block">Log Out</span></a>
+                    <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span class="clearfix d-none d-sm-inline-block">Log Out</span></a>
                 </li>
             </ul>
         </nav>
@@ -119,7 +118,47 @@
     <main>
 
         <div class="container" id="mainBody">
-            <!-- delete after -->
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col">
+                    <!-- Card -->
+                    <div class="card card-cascade wider reverse">
+
+                        <!-- Card image -->
+                        <div class="view view-cascade overlay">
+                            <!--Google map-->
+                            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                                <iframe src="https://maps.google.com/maps?q=charlotte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+
+                            <!--Google Maps-->
+
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+
+                            <!-- Title -->
+                            <h4 class="card-title"><strong>Fill in your zipcode or allow us to use your location with the crosshairs</strong></h4>
+                            <!-- Text -->
+                            <div class="md-form input-group mb-3">
+                                <input type="text" id="searchZip" class="form-control" placeholder="Enter Zipcode" aria-label="Zipcode" aria-describedby="material-addon1">
+                                <div class="input-group-append flex-nowrap">
+                                    <span class="input-group-text md-addon" id="material-addon1"><a id="clickSearch" href="#">Go</i></a></span>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text md-addon" id="material-addon1"><a href="#"><i class="fas fa-crosshairs"></i></a></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+                </div>
+                <div class="col-2"></div>
+            </div>
 
 
 
@@ -201,7 +240,7 @@
                                             <!-- Title -->
                                             <h4 class="card-title"><strong>John Parker</strong></h4>
                                             <!-- Subtitle -->
-                                            <h5 class="blue-text pb-2"><strong>Web Dev</strong></h5>
+                                            <h5 class="pb-2"><strong>Web Dev</strong></h5>
                                             <!-- Text -->
                                             <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
 
@@ -305,6 +344,8 @@
     <script src="./assets/mdb/js/mdb.js"></script>
     <!-- TEAM SCRIPTS -->
     <script src="./assets/TeamFiles/js/uiux.js"></script>
+
+    <script src="./assets/TeamFiles/js/search.js"></script>
     <script src="./assets/TeamFiles/js/apis.js"></script>
     <script src="./assets/TeamFiles/js/google-api.js"></script>
     <script src="./assets/TeamFiles/js/getposition.js"></script>
