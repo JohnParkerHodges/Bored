@@ -8,7 +8,7 @@ $("#musicTwo").on("click", function(e) {
   
       jQuery.ajaxPrefilter(options => {
         if (options.crossDomain && jQuery.support.cors) {
-          options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+          options.url = "https://uncc-cors-proxy.herokuapp.com/" + options.url;
         }
       });
       $.ajax({
@@ -64,7 +64,7 @@ $("#musicTwo").on("click", function(e) {
 
     jQuery.ajaxPrefilter(options => {
         if (options.crossDomain && jQuery.support.cors) {
-            options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
+            options.url = "https://uncc-cors-proxy.herokuapp.com/" + options.url;
         }
     });
 
