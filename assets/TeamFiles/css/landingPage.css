@@ -3,7 +3,6 @@ body,
 header,
 .carousel {
     height: 100%;
-    color: #747185;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
 }
@@ -55,10 +54,14 @@ div.landingPageContent p {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;
 }
-div.landingPageContent>a.btn:not() {
+.landingPageContent>a.btn {
+    border: #ffffed solid 2px;
+    color: #ffffed;
+}
+/* .landingPageContent>a.btn:not() {
     border: #ffffed 2px solid;
     border-radius: unset;
-}
+} */
 
 .map-container-5 {
     overflow: hidden;
