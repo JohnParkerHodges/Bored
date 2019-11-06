@@ -1,59 +1,60 @@
 $("#clickSearch").on("click", function() {
-  const zip = $("#searchZip").val();
-  console.log(zip);
+    const zip = $("#searchZip").val();
+    console.log(zip);
+    localStorage.setItem('neverBoredApp-zipCode', zip);
 
-  const queryURL =
-    "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
-    zip +
-    "&startDate=today&radius=10000&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
-  console.log(zip);
+    const queryURL =
+        "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
+        zip +
+        "&startDate=today&radius=10000&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
+    console.log(zip);
 
-  jQuery.ajaxPrefilter(options => {
-    if (options.crossDomain && jQuery.support.cors) {
-      options.url = "http://uncc-cors-proxy.herokuapp.com/" + options.url;
-    }
-  });
+    jQuery.ajaxPrefilter(options => {
+        if (options.crossDomain && jQuery.support.cors) {
+            options.url = "https://uncc-cors-proxy.herokuapp.com/" + options.url;
+        }
+    });
 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    //window.location.replace('./Main.html');
-    console.log(response);
-    
-    const events = response._embedded.events;
-    $("#mainBody").empty();
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        //window.location.replace('./home.html');
+        console.log(response);
 
-    const chunkedEvents = chunk(3)(events);
-    $("#mainBody").append(`<div class ="row" id="eventsRow"></div>`);
+        const events = response._embedded.events;
+        $("#mainBody").empty();
 
-    for (let i = 0; i < chunkedEvents.length; i++) {
-      $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+        const chunkedEvents = chunk(Math.ceil(events.length) / 4)(events);
+        $("#mainBody").append(`<div class ="row" id="eventsRow"></div>`);
 
-      for (let j = 0; j < chunkedEvents[i].length; j++) {
-        const event = chunkedEvents[i][j];
-        const imageUrl = response._embedded.events[i].images[2].url;
-        $(`#eventsCol-${i}`).append(
-          EventCardTwo(
-            imageUrl,
-            event.name,
-            event.info,
-            `${event.owner}${event.postalcode}`
-          )
-        );
-        // APPEND MODAL FOR EVENT INFO
-        $("#mainBody").append(
-          EventModalTwo(
-            `${event.owner}${event.postalcode}`,
-            event.name,
-            event.info
-          )
-        );
-      }
-    }
-    
-  });
-  
+        for (let i = 0; i < chunkedEvents.length; i++) {
+            $("#eventsRow").append(`<div class="col-4" id="eventsCol-${i}"></div>`);
+
+            for (let j = 0; j < chunkedEvents[i].length; j++) {
+                const event = chunkedEvents[i][j];
+                const imageUrl = response._embedded.events[i].images[2].url;
+                $(`#eventsCol-${i}`).append(
+                    EventCardTwo(
+                        imageUrl,
+                        event.name,
+                        event.info,
+                        `${event.owner}${event.postalcode}`
+                    )
+                );
+                // APPEND MODAL FOR EVENT INFO
+                $("#mainBody").append(
+                    EventModalTwo(
+                        `${event.owner}${event.postalcode}`,
+                        event.name,
+                        event.info
+                    )
+                );
+            }
+        }
+
+    });
+
 });
 
 function EventCardTwo(imageUrl, name, info, id) {
@@ -78,10 +79,10 @@ function EventCardTwo(imageUrl, name, info, id) {
   
   </div>
   <!-- Card -->`;
-  }
-  
-  // template for building an event modal component
-  function EventModalTwo(id, name, info) {
+}
+
+// template for building an event modal component
+function EventModalTwo(id, name, info) {
     return `
   <!-- Modal -->
   <div class="modal fade" id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -104,7 +105,4 @@ function EventCardTwo(imageUrl, name, info, id) {
       </div>
     </div>
   </div>`;
-  }
-  
-
-  
+}

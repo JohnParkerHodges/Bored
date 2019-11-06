@@ -49,15 +49,15 @@
                 <!-- Event Categories -->
                 <ul class="list-unstyled">
                     <p class="pl-2"><i class="fas fa-filter pr-1"></i>Events by Category</p>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-ticket-alt"></i>Shows</a>
+                    <li><a href="#" class="waves-effect mt-1 category" id="play"><i class="fas fa-ticket-alt"></i>Shows</a>
                     </li>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-football-ball"></i>Sports</a>
+                    <li><a href="#" class="waves-effect mt-1 category" id="sport"><i class="fas fa-football-ball"></i>Sports</a>
                     </li>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-hotel"></i>Festivals</a>
+                    <li><a href="#" class="waves-effect mt-1 category" id="festival"><i class="fas fa-hotel"></i>Festivals</a>
                     </li>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-music"></i>Music</a></li>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-film"></i>Movies</a></li>
-                    <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-utensils"></i>Food</a></li>
+                    <li><a href="#" class="waves-effect mt-1 category" id="musicTwo"><i class="fas fa-music"></i>Music</a></li>
+                    <li><a href="#" class="waves-effect mt-1 category" id="movies"><i class="fas fa-film"></i>Movies</a></li>
+                    <li><a href="#" class="waves-effect mt-1 category" id="food"><i class="fas fa-utensils"></i>Food</a></li>
                 </ul>
                 <!-- User Profile Categories -->
                 <li><a class="waves-effect pl-2 pt-3" data-toggle="modal" data-target="#modalLRForm"><i class="far fa-user-circle pr-1"></i>Profile</a>
@@ -69,7 +69,7 @@
                                     class="fas fa-angle-down rotate-icon"></i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#" class="waves-effect"><i class="far fa-address-card pr-1"></i>!Bored
+                                    <li><a href="aboutUs.html" class="waves-effect"><i class="far fa-address-card pr-1"></i>!Bored
                                             Creators</a></li>
                                     <li><a href="#" class="waves-effect"><i
                                                 class="far fa-question-circle pr-1"></i>FAQ</a></li>
@@ -99,7 +99,7 @@
             </div>
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="Main.html"><i class="fas fa-home pr-1"></i><span
+                    <a class="nav-link" href="home.html"><i class="fas fa-home pr-1"></i><span
                             class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
@@ -118,7 +118,7 @@
     <!--/.Double navigation-->
 
     <!--Main Layout-->
-    <main>
+    <main id="mainBody">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -149,8 +149,7 @@
                         <h4 class="pb-1 pt-1 card-title text-center"><i class="far fa-bookmark pr-1"></i>Saved Events
                         </h4>
                         <!-- Text -->
-                        <p class="card-text">Nothing to see here yet! Head to the Home page to find exciting things to
-                            do.</p>
+                        <div class="card-text" id="savedFavorites"></div>
                     </div>
 
                 </div>
@@ -191,32 +190,6 @@
 
                 </div>
                 <!-- Card Wider -->
-            </div>
-            <div class="col">
-                <!-- Card Narrower -->
-                <div class="card card-cascade narrower">
-
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                            alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade">
-
-                        <!-- Title -->
-                        <h5 class="card-title text-center dashTitles"><i class="fas fa-cogs pr-1"></i>Settings</h5>
-                        <!-- Text -->
-
-                        <p class="card-text"></p>
-                    </div>
-
-                </div>
             </div>
             <div class="col-2"></div>
 

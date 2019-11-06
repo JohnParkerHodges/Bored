@@ -1,5 +1,7 @@
 $(document).ready(function() {
     checkUserAuth();
+    setThemeOnLogin();
+    buildFavorites();
 
     // SideNav Button Initialization
     $(".button-collapse").sideNav();
@@ -40,7 +42,6 @@ $(document).ready(function() {
             const localStorageKey = localStorage.key(i);
             if (localStorageKey.includes("neverBoredAppEvent")) {
                 const event = JSON.parse(localStorage.getItem(localStorageKey));
-                console.log(event)
 
                 $("#userFavorites").append(`<p><a href="${event.url}" target="_blank">${event.title}</a></p>`);
             }
@@ -52,14 +53,17 @@ $(document).ready(function() {
 })
 
 function checkUserAuth() {
-    if (localStorage.getItem('neverBoredApp-LoggedIn') === "false") {
-        window.location.replace('./landingPage.html');
+    if (!JSON.parse(localStorage.getItem('neverBoredApp-LoggedIn')).isLoggedIn) {
+        window.location.replace('./index.html');
     }
 }
 
 function userLogOut() {
-    localStorage.setItem('neverBoredApp-LoggedIn', false)
-    window.location.replace('./landingPage.html');
+    localStorage.setItem('neverBoredApp-LoggedIn', JSON.stringify({
+        isLoggedIn: false,
+        userName: null
+    }))
+    window.location.replace('./index.html');
 }
 
 // Themes
@@ -76,59 +80,6 @@ function removeThemes() {
     $("body").removeClass('grey-skin')
     $("body").removeClass('black-skin')
 }
-
-// function to add theme to body
-function whiteTheme() {
-    removeThemes();
-    $(body).addClass('whiteTheme')
-}
-
-function cyanTheme() {
-    removeThemes();
-    $(body).addClass('cyanTheme')
-}
-
-function defaultTheme() {
-    removeThemes();
-    $(body).addClass('defaultTheme')
-}
-
-function purpleTheme() {
-    removeThemes();
-    $(body).addClass('purpleTheme')
-}
-
-function navyblueTheme() {
-    removeThemes();
-    $(body).addClass('navyblueTheme')
-}
-
-function pinkTheme() {
-    removeThemes();
-    $(body).addClass('pinkTheme')
-}
-
-function indigoTheme() {
-    removeThemes();
-    $(body).addClass('indigoTheme')
-}
-
-function lightblueTheme() {
-    removeThemes();
-    $(body).addClass('lightblueTheme')
-}
-
-function greyTheme() {
-    removeThemes();
-    $(body).addClass('greyTheme')
-}
-
-function blackTheme() {
-    removeThemes();
-    $(body).addClass('blackTheme')
-}
-
-
 
 // adding click handler to each skin
 $("#blackTheme").on('click', function() {
@@ -182,23 +133,6 @@ $("#greyTheme").on('click', function() {
     changeUserTheme('grey-skin')
 })
 
-
-
-$("#whiteThemeButton").on('click', whiteTheme);
-$("#blackThemeButton").on('click', blackTheme);
-$("#cyanThemeButton").on('click', cyanTheme);
-$("#defaultButton").on('click', defaultTheme);
-$("#purpleThemeButton").on('click', purpleTheme);
-$("#navyblueThemeButton").on('click', navyblueTheme);
-$("#pinkThemeButton").on('click', pinkTheme);
-$("#indigoThemeButton").on('click', indigoTheme);
-$("#lightblueThemeButton").on('click', lightblueTheme);
-$("#greyThemeButton").on('click', greyTheme);
-
-
-
-
-
 function changeUserTheme(newTheme) {
     const currentLoggedInUserName = JSON.parse(localStorage.getItem(`neverBoredApp-LoggedIn`)).userName;
     const user = JSON.parse(localStorage.getItem(`neverBoredApp-User-${currentLoggedInUserName}`));
@@ -208,12 +142,127 @@ function changeUserTheme(newTheme) {
     localStorage.setItem(`neverBoredApp-User-${currentLoggedInUserName}`, JSON.stringify(user))
 }
 
-
 function setThemeOnLogin() {
     const currentLoggedInUserName = JSON.parse(localStorage.getItem(`neverBoredApp-LoggedIn`)).userName;
     const userTheme = JSON.parse(localStorage.getItem(`neverBoredApp-User-${currentLoggedInUserName}`)).theme;
 
-    console.log(currentLoggedInUserName)
-    console.log(userTheme)
     userTheme && $("body").addClass(userTheme)
+}
+
+function buildFavorites() {
+    const favoritesDiv = $("#savedFavorites");
+    if (!favoritesDiv[0]) return;
+
+    const currentLoggedInUserName = JSON.parse(localStorage.getItem(`neverBoredApp-LoggedIn`)).userName;
+    const userFavorites = JSON.parse(localStorage.getItem(`neverBoredApp-User-${currentLoggedInUserName}`)).favorites;
+
+    if (userFavorites.length < 1) {
+        favoritesDiv.append("<p>You haven't saved any favorites! Try beginning by choosing a category from the side pane.</p>")
+    } else {
+        for (let i = 0; i < userFavorites.length; i++) {
+            makeFavoriteElements(userFavorites[i], favoritesDiv)
+        }
+    }
+}
+
+function makeFavoriteElements(favorite, favoritesDiv) {
+    let favoriteDashLink;
+    let favoriteModal;
+    const event = favorite.event;
+    console.log(favorite)
+
+    if (favorite.type === "eventful") {
+        favoriteDashLink = FavoriteDashLink(event.id.replace(/[!@#\$%\^\&*\)\(+=._-]/g, ""), event.title);
+        favoriteModal = FavoriteDashEventfulModal(
+            event.id.replace(/[!@#\$%\^\&*\)\(+=._-]/g, ""),
+            event.title,
+            event.description,
+            event.start_time.match(/(\d{4}-\d{2}-\d{2})/g)[0],
+            event.image.medium.url);
+    } else {
+        favoriteDashLink = FavoriteDashLink(event.id, event.name);
+        favoriteModal = FavoriteDashTicketMasterModal(
+            event.id,
+            event.name,
+            event.dates.start.localDate,
+            event.url,
+            event.seatmap.staticUrl,
+            event.images[2].url);
+    }
+
+    favoritesDiv.append(favoriteDashLink);
+    $("#mainBody").append(favoriteModal);
+}
+
+function FavoriteDashLink(id, name) {
+    return `<li><a href="#" data-toggle="modal" data-target="#${id}">${name}</a></li>`
+}
+
+function FavoriteDashTicketMasterModal(id, title, date, ticketUrl, seatingUrl, imageUrl) {
+    return `
+<!-- Modal -->
+<div class="modal fade" id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog z-depth-5" role="document">
+    <div class="modal-content p-2">
+        <!-- Card -->
+        <div class="card mt-5 z-depth-0">
+        
+        <!-- Card image -->
+        <img class="card-img-top" src="${imageUrl}" alt="Card image cap">
+        
+        <!-- Card content -->
+        <div class="card-body whiteCard z-depth-0">
+        
+        <!-- Title -->
+        <h4 class="card-title"><a>${title}</a></h4>
+        <!-- Text -->
+        <h5>Date: ${date}</h5>
+        <!-- Button -->
+        <a href="${ticketUrl}" target="_blank" class="btn btn-primary">Buy Tickets</a>
+        <a href="${seatingUrl}" target="_blank" class="btn btn-primary">View Seating</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        </div>
+        </div>
+        <!-- Card -->
+    </div>
+
+  </div>
+</div>`;
+}
+
+function FavoriteDashEventfulModal(id, title, description, date, imageUrl) {
+    return `
+<!-- Modal -->
+<div class="modal fade" id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog z-depth-5" role="document">
+
+  <div class="modal-content p-2">
+        <!-- Card -->
+        <div class="card mt-5 z-depth-0">
+        
+        <!-- Card image -->
+        <img class="card-img-top" src="${imageUrl}" alt="Card image cap">
+        
+        <!-- Card content -->
+        <div class="card-body whiteCard">
+        
+        <!-- Title -->
+        <h4 class="card-title"><a>${title}</a></h4>
+        <!-- Text -->
+        <h5>Date: ${date}</h5>
+        <p class="card-text">${description}</p>
+        <!-- Button -->
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        </div>
+        
+        </div>
+        <!-- Card -->
+    </div>
+
+  </div>
+</div>`;
 }

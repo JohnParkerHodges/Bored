@@ -1,15 +1,19 @@
-html, body {
+html,
+body {
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #f3f2f2;
     font-size: 18px;
 }
 
+
 /* NavBars Styling */
+
 a.button-collapse>i {
     position: relative;
     bottom: 3px;
     left: 2px;
 }
+
 .navbarTitle {
     font-family: 'Fontdiner Swanky', cursive !important;
     color: #ff7a87;
@@ -20,7 +24,17 @@ a.category {
     padding-left: 20px;
 }
 
+<<<<<<< HEAD
 a.category>i {
 position: relative;
     right: 5px;
+=======
+li .collapsible-header {
+    font-size: 0.9rem !important;
+    padding: 0 !important;
+}
+
+.whiteCard {
+    background-color: white;
+>>>>>>> a449035d6d49b97edba23fbd27910406a61b70ca
 }
