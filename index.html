@@ -1,342 +1,729 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>!Bored</title>
+    <title>Welcome to !Bored</title>
     <!-- LIBRARY STYLESHEETS -->
     <link rel="stylesheet" href="./assets/mdb/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/mdb/css/mdb.css">
     <link rel="stylesheet" href="./assets/mdb/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+
     <!-- TEAM STYLESHEETS -->
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Cherry+Cream+Soda|Fontdiner+Swanky&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/TeamFiles/css/teamCss.css">
-    <link rel="stylesheet" href="./assets/TeamFiles/css/startPage.css">
+    <link href="https://fonts.STARTogleapis.com/css?family=Barlow+Condensed:500|Cherry+Cream+Soda|Fontdiner+Swanky&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/TeamFiles/css/landingPage.css">
 </head>
 
 <body class="hidden-sn test-skin">
 
-    <!--Double navigation-->
-    <header>
-        <!-- Sidebar navigation -->
-        <div id="slide-out" class="side-nav">
-            <ul class="custom-scrollbar">
-                <!-- Logo -->
-                <li>
-                    <div class="logo-wrapper waves-light">
-                        <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="view">
+
+                    <!--Video source-->
+                    <video class="video-intro" autoplay loop muted>
+                <source src="https://mdbootstrap.com/img/video/city.mp4" type="video/mp4" >
+              </video>
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center mx-5 wow fadeIn landingPageContent">
+                            <h1 class="mb-4">
+                                <strong>!Bored</strong>
+                            </h1>
+                            <p>
+                                <strong>The most comprehensive boredom check!</strong>
+                            </p>
+                            <a class="btn btn-lg waves-effect" data-toggle="modal" data-target="#userSignInModal">START
+                                <i class="fas fa-sign-in-alt ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
                     </div>
-                </li>
-                <!--/. Logo -->
-                <!--Social-->
-                <li>
-                    <ul class="social">
-                        <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook-f"> </i></a></li>
-                        <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
-                        <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus-g"> </i></a></li>
-                        <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
-                    </ul>
-                </li>
-                <!--/Social-->
+                    <!-- Mask & flexbox options-->
 
-                <!-- Side navigation links -->
-                <!-- Event Categories -->
-                <ul class="list-unstyled">
-                    <p class="ml-3 mt-1 category"><i class="fas fa-filter pr-1"></i>Events by Category</p>
-                    <li><a href="#" class="waves-effect mt-1 category" id="play"><i class="fas fa-ticket-alt pr-1"></i>Shows</a>
-                    </li>
-                    <li><a href="#" class="waves-effect mt-1 category" id="sport"><i class="fas fa-football-ball pr-1"></i>Sports</a></li>
-                    <li><a href="#" class="waves-effect mt-1 category" id="festival"><i class="fas fa-hotel pr-1"></i>Festivals</a>
-                    </li>
-                    <li><a href="#" class="waves-effect mt-1 category" id="musicTwo"><i class="fas fa-music pr-1"></i>Music</a></li>
-                    <li><a href="#" class="waves-effect mt-1 category" id="movies"><i class="fas fa-film pr-1"></i>Movies</a></li>
-                    <li><a href="#" class="waves-effect mt-1 category" id="food"><i class="fas fa-utensils pr-1"></i>Food</a></li>
-                </ul>
-                <li>
-                    <ul class="collapsible collapsible-accordion">
-                        <!-- Info Categories -->
-                        <li><a class="collapsible-header waves-effect arrow-r ml-3"><i
-                                        class="fas fa-info-circle pr-1"></i>About !Bored<i
-                                        class="fas fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="aboutUs.html" class="waves-effect"><i class="far fa-address-card pr-1"></i>!Bored
-                                                Creators</a></li>
-                                    <li><a href="#" class="waves-effect"><i
-                                                    class="far fa-question-circle pr-1"></i>FAQ</a></li>
-                                    <li><a href="#" class="waves-effect"><i class="far fa-paper-plane pr-1"></i>Contact
-                                                Us</a></li>
-                                    <li><a href="#" class="waves-effect"><i class="fas fa-donate pr-1"></i>Support
-                                                Us</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- User Profile Modal Link -->
-                        <li><a class="waves-effect" data-toggle="modal" data-target="#modalLRForm"><i class="far fa-user-circle pr-1"></i>Profile</a>
-                    </ul>
-                    </li>
-                    <!--/. Side navigation links -->
-            </ul>
-            <div class="sidenav"></div>
+                </div>
+            </div>
+            <!--/First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="view">
+
+                    <!--Video source-->
+                    <video class="video-intro" autoplay loop muted>
+                  <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4">
+              </video>
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center mx-5 wow fadeIn landingPageContent">
+                            <h1 class="mb-4">
+                                <strong>!Bored</strong>
+                            </h1>
+                            <p>
+                                <strong>The most comprehensive boredom check!</strong>
+                            </p>
+                            <a class="btn btn-lg waves-effect" data-toggle="modal" data-target="#userSignInModal">START
+                                <i class="fas fa-sign-in-alt ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+
+                </div>
+            </div>
+            <!--/Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <div class="view">
+
+                    <!--Video source-->
+                    <video class="video-intro" autoplay loop muted>
+                  <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4">
+              </video>
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center mx-5 wow fadeIn landingPageContent">
+                            <h1 class="mb-4">
+                                <strong>!Bored</strong>
+                            </h1>
+                            <p>
+                                <strong>The most comprehensive boredom check!</strong>
+                            </p>
+                            <a class="btn btn-lg waves-effect" data-toggle="modal" data-target="#userSignInModal">START
+                                <i class="fas fa-sign-in-alt ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+
+                </div>
+            </div>
+            <!--/Third slide-->
+
         </div>
-        <!--/. Sidebar navigation -->
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-            <!-- SideNav slide-out button -->
-            <div class="float-left">
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
-            </div>
-            <!-- Breadcrumb-->
-            <div class="breadcrumb-dn mr-auto">
-                <p class="navbarTitle">!Bored</p>
-            </div>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-home pr-1"></i><span
-                            class="clearfix d-none d-sm-inline-block">Home</span></a>
-                </li>
-                <li class="nav-item">
+        <!--/.Slides-->
 
-                    <a class="nav-link" href="./userDash.html"><i class="fas fa-desktop pr-1"></i><span
-                            class="clearfix d-none d-sm-inline-block">Dashboard </span></a>
-                </li>
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span
-                            class="clearfix d-none d-sm-inline-block">Log Out</span></a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.Navbar -->
-    </header>
-    <!--/.Double navigation-->
+    </div>
+    <!--/.Carousel Wrapper-->
 
-    <!--Main Layout-->
+    <!--Main layout-->
     <main>
+        <div class="container">
 
-        <div class="container" id="mainBody">
+            <!--Section: Main info-->
+            <section class="mt-5 wow fadeIn">
 
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col">
-                    <!-- Card -->
-                    <div class="card card-cascade wider reverse">
+                <!--Grid row-->
+                <div class="row">
 
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <!--Google map-->
-                            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-                                <iframe src="https://maps.google.com/maps?q=charlotte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-
-                            <!--Google Maps-->
-
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+                        <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
+                            <iframe src="https://maps.google.com/maps?q=Charlotte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
 
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
 
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>Fill in your zipcode or allow us to use your location with the crosshairs</strong></h4>
-                            <!-- Text -->
-                            <div class="md-form input-group mb-3">
-                                <input type="text" id="searchZip" class="form-control" placeholder="Enter Zipcode" aria-label="Zipcode" aria-describedby="material-addon1">
-                                <div class="input-group-append flex-nowrap">
-                                    <span class="input-group-text md-addon" id="material-addon1"><a id="clickSearch" href="#">Go</i></a></span>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text md-addon" id="material-addon1"><a href="#"><i class="fas fa-crosshairs"></i></a></span>
-                                </div>
+                    </div>
+
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!-- Main heading -->
+                        <h3 class="h3 mb-3">APIs we Used</h3>
+                        <h5><strong><i class="fas fa-calendar-alt"></i> eventful</strong></h5>
+                        <p>365 days of the year singles and families, friends and acquaintances, teens and baby boomers rely on Eventful to plan their leisure time and spend their discretionary income. Eventful is the largest digital media company connecting
+                            consumers with localized events, entertainment and movies.</p>
+                        <hr>
+                        <h5><strong><i class="fab fa-google"></i> Google Places</strong></h5>
+                        <p>The Places API is a service that returns information about places using HTTP requests. Places are defined within this API as establishments, geographic locations, or prominent points of interest.</p>
+                        <hr>
+                        <h5><strong><i class="fas fa-ticket-alt"></i> ticketmaster</strong></h5>
+                        <p>The Ticketmaster API offers access to live events, attractions, venues and tickets! The datasets span all North American and International markets. Furthermore, the Ticketmaster API provides data coming from ticketing platforms
+                            like TicketWeb, Universe and Front Gate.</p>
+
+                        <!-- Main heading -->
+
+
+
+
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Main info-->
+
+            <hr class="my-5">
+
+            <!--Section: Main features & Quick START-->
+            <section>
+
+                <h3 class="h3 text-center mb-5">About MDB</h3>
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 px-4">
+
+                        <!--First row-->
+                        <div class="row">
+                            <div class="col-1 mr-3">
                             </div>
-
+                            <div class="col-10">
+                                <h4 class="feature-title">Why we chose:</h4>
+                                <br>
+                                <h5 class="feature-title">Eventful</h5>
+                                <p>We chose Eventful because we needed to get info on events in order to present them to the user at all!</p>
+                            </div>
                         </div>
+                        <!--/First row-->
 
-                    </div>
-                    <!-- Card -->
-                </div>
-                <div class="col-2"></div>
-            </div>
+                        <div style="height:30px"></div>
 
-
-
-        </div>
-
-
-
-
-        <!-- User Modal -->
-        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="userFavorites"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="userLogOut" onclick="userLogOut()">Log
-                            Out</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-        <!--Modal: Login / Register Form-->
-        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog cascading-modal" role="document">
-                <!--Content-->
-                <div class="modal-content">
-
-                    <!--Modal cascading tabs-->
-                    <div class="modal-c-tabs">
-
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
-                                        class="fas fa-user mr-1"></i>
-                                    Account</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
-                                        class="fas fa-fill-drip"></i>
-                                    Theme</a>
-                            </li>
-                        </ul>
-
-                        <!-- Tab panels -->
-                        <div class="tab-content">
-                            <!--Panel 7-->
-                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-
-                                <!--Body-->
-                                <div class="modal-body mb-1">
-                                    <!-- Card Wider -->
-                                    <div class="card card-cascade wider">
-
-                                        <!-- Card image -->
-                                        <div class="view view-cascade overlay">
-                                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
-                                            <a href="#!">
-                                                <div class="mask rgba-white-slight"></div>
-                                            </a>
-                                        </div>
-
-                                        <!-- Card content -->
-                                        <div class="card-body card-body-cascade text-center">
-
-                                            <!-- Title -->
-                                            <h4 class="card-title"><strong>John Parker</strong></h4>
-                                            <!-- Subtitle -->
-                                            <h5 class="pb-2"><strong>Web Dev</strong></h5>
-                                            <!-- Text -->
-                                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                                            <!-- Linkedin -->
-                                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                                            <!-- Twitter -->
-                                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                                            <!-- Dribbble -->
-                                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!--Footer-->
-
+                        <!--Second row-->
+                        <div class="row">
+                            <div class="col-1 mr-3">
                             </div>
-                            <!--/.Panel 7-->
-
-                            <!--Panel 8-->
-                            <div class="tab-pane fade" id="panel8" role="tabpanel">
-
-                                <!--Body-->
-                                <div class="modal-body text-center">
-                                    <div class="row rounded-0 border">
-                                        <div class="col"><a id="blackTheme">Black Theme</a></div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="whiteTheme">White Theme</a>
-                                        </div>
-
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="cyanTheme">Cyan Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="defaultTheme">Default Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="purpleTheme">Purple Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="navyblueTheme">Navy Blue Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="pinkTheme">Pink Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="indigoTheme">Indigo Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="lightblueTheme">Light Blue Theme</a>
-                                        </div>
-                                    </div>
-                                    <div class="row rounded-0 border">
-                                        <div class="col">
-                                            <a id="greyTheme">Grey Theme</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <!--Footer-->
-
+                            <div class="col-10">
+                                <h5 class="feature-title">Google Places</h5>
+                                <p>We chose Google places so we had a way to turn the lat and long of a user (Or their zipcode) into an address to properly tell their distance of the user from different events
+                                </p>
                             </div>
-                            <!--/.Panel 8-->
                         </div>
+                        <!--/Second row-->
+
+                        <div style="height:30px"></div>
+
+                        <!--Third row-->
+                        <div class="row">
+                            <div class="col-1 mr-3">
+                            </div>
+                            <div class="col-10">
+                                <h5 class="feature-title">Ticketmaster</h5>
+                                <p>We chose to use Ticketmaster mainly so we would be able to offer the ability to get tickets to the event the user wished to attend (if the event requires as much)</p>
+                            </div>
+                        </div>
+                        <!--/Third row-->
 
                     </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12">
+
+                        <p class="h5 text-center mb-4">Watch our "5 min Quick START" tutorial</p>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!--/Grid column-->
+
                 </div>
-                <!--/.Content-->
-            </div>
+                <!--/Grid row-->
+
+            </section>
+            <!--Section: Main features & Quick START-->
+
+            <hr class="my-5">
+
+            <!--Section: Not enough-->
+            <section>
+
+                <h2 class="my-5 h3 text-center">Not enough?</h2>
+
+                <!--First row-->
+                <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+                    <!--First column-->
+                    <div class="col-md-4">
+                        <!--First row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">Free for personal and commercial use</h6>
+                                <p>Our license is user-friendly. Feel free to use MDB for both private as well as commercial projects.
+                                </p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/First row-->
+
+                        <!--Second row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">400+ UI elements</h6>
+                                <p>An impressive collection of flexible components allows you to develop any project.
+                                </p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Second row-->
+
+                        <!--Third row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">600+ icons</h6>
+                                <p>Hundreds of useful, scalable, vector icons at your disposal.</p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Third row-->
+
+                        <!--Fourth row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">Fully responsive</h6>
+                                <p>It doesn't matter whether your project will be displayed on desktop, laptop, tablet or mobile phone. MDB looks great on each screen.</p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Fourth row-->
+                    </div>
+                    <!--/First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-4 flex-center">
+                        <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone" class="z-depth-0 img-fluid">
+                    </div>
+                    <!--/Second column-->
+
+                    <!--Third column-->
+                    <div class="col-md-4 mt-2">
+                        <!--First row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">70+ CSS animations</h6>
+                                <p>Neat and easy to use animations, which will increase the interactivity of your project and delight your visitors.
+                                </p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/First row-->
+
+                        <!--Second row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">Plenty of useful templates</h6>
+                                <p>Need inspiration? Use one of our predefined templates for free.</p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Second row-->
+
+                        <!--Third row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">Easy installation</h6>
+                                <p>5 minutes, a few clicks and... done. You will be surprised at how easy it is.
+                                </p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Third row-->
+
+                        <!--Fourth row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="feature-title">Easy to use and customize</h6>
+                                <p>Using MDB is straightforward and pleasant. Components flexibility allows you deep customization. You will easily adjust each component to suit your needs.</p>
+                                <div style="height:15px"></div>
+                            </div>
+                        </div>
+                        <!--/Fourth row-->
+                    </div>
+                    <!--/Third column-->
+
+                </div>
+                <!--/First row-->
+
+            </section>
+            <!--Section: Not enough-->
+
+            <hr class="mb-5">
+
+            <!--Section: More-->
+            <section>
+
+                <h2 class="my-5 h3 text-center">...and even more</h2>
+
+                <!--First row-->
+                <div class="row features-small mt-5 wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fab fa-firefox fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2 pl-3">
+                                <h5 class="feature-title font-bold mb-1">Cross-browser compatibility</h5>
+                                <p class="mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers; all browsers love MDB.
+                                </p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-level-up-alt fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">Frequent updates</h5>
+                                <p class="mt-2">MDB becomes better every month. We love the project and enhance as much as possible.
+                                </p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-comments fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">Active community</h5>
+                                <p class="mt-2">Our society grows day by day. Visit our forum and check how it is to be a part of our family.
+                                </p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-code fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">jQuery 3.x</h5>
+                                <p class="mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest features which come along with it.
+                                </p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                </div>
+                <!--/First row-->
+
+                <!--Second row-->
+                <div class="row features-small mt-4 wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-cubes fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">Modularity</h5>
+                                <p class="mt-2">Material Design for Bootstrap comes with both, compiled, ready to use libraries including all features as well as modules for CSS (SASS files) and JS.</p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-question fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">Technical support</h5>
+                                <p class="mt-2">We care about reliability. If you have any questions - do not hesitate to contact us.
+                                </p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-th fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">Flexbox</h5>
+                                <p class="mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xl-3 col-lg-6">
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="far fa-file-code fa-2x mb-1" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-10 mb-2">
+                                <h5 class="feature-title font-bold mb-1">SASS files</h5>
+                                <p class="mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
+                            </div>
+                        </div>
+                        <!--/Grid row-->
+                    </div>
+                    <!--/Grid column-->
+
+                </div>
+                <!--/Second row-->
+
+            </section>
+            <!--Section: More-->
+
         </div>
-        <!--Modal: Login / Register Form-->
-
-
     </main>
-    <!--Main Layout-->
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <hr class="my-4">
+
+
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2019 Copyright:
+            <a href="" target="_blank"> !Bored </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+
+    <!-- USER SIGN UP MODAL -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="userSignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog form-dark" role="document">
+            <!--Content-->
+            <div class="modal-content card card-image" style="background-image: url('./assets/TeamFiles/images/wp191004bokeh.jpg');">
+                <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                    <!--Header-->
+                    <div class="modal-header text-center pb-4">
+                        <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel"><strong>SIGN</strong> <a class="font-weight-bold"><strong> UP</strong></a></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <!--Body-->
+                        <div class="md-form mb-5" id="userSignInForm">
+                            <input type="email" id="userSignUpEmail" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="Form-email5">Your email</label>
+                        </div>
+
+                        <div class="md-form pb-3">
+                            <input type="password" id="userSignUpPassword" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="Form-pass5">Your password</label>
+                            <div class="form-group mt-4">
+                                <input class="form-check-input" type="checkbox" id="checkbox624">
+                                <label for="checkbox624" class="form-check-label">Accept the<a href="#" class="font-weight-bold">
+                Terms and Conditions</a></label>
+                            </div>
+                        </div>
+
+
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center mb-4">
+
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="button" id="userSignUpButton" class="btn btn-success btn-block btn-rounded z-depth-1">Sign up</button>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12">
+                                <p class="font-small d-flex justify-content-end">Have an account? <a href="#" class="ml-1 font-weight-bold" data-dismiss="modal" data-toggle="modal" data-target="#userLogInModal">
+                login</a></p>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                    </div>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <!-- USER START MODAL -->
+    <!-- Modal -->
+    <div class="modal fade" id="userLogInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog form-dark" role="document">
+            <!--Content-->
+            <div class="modal-content card card-image" style="background-image: url('./assets/TeamFiles/images/wp191004bokeh.jpg');">
+                <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                    <!--Header-->
+                    <div class="modal-header text-center pb-4">
+                        <h3 class="modal-title w-100 font-weight-bold" id="myModalLabel"><strong>LOG</strong> <a class="font-weight-bold"><strong> IN</strong></a></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <!--Body-->
+                        <div class="md-form mb-5" id="userLogInForm">
+                            <input type="email" id="userLogInEmail" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="Form-email5">Your email</label>
+                        </div>
+
+                        <div class="md-form pb-3">
+                            <input type="password" id="userLogInPassword" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="Form-pass5">Your password</label>
+                            <div class="form-group mt-4">
+                                <input class="form-check-input" type="checkbox" id="checkbox624">
+                                <label for="checkbox624" class="form-check-label">Accept the<a href="#" class="font-weight-bold">
+                        Terms and Conditions</a></label>
+                            </div>
+                        </div>
+
+
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center mb-4">
+
+                            <!--Grid column-->
+                            <div class="text-center mb-3 col-md-12">
+                                <button type="button" id="userLogInButton" class="btn btn-success btn-block btn-rounded z-depth-1">START</button>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12">
+                                <p class="font-small d-flex justify-content-end">Don't have an account? <a href="#" class="ml-1 font-weight-bold" data-dismiss="modal" data-toggle="modal" data-target="#userSignInModal">
+                        Sign Up</a></p>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                    </div>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
 
 
 
@@ -346,12 +733,8 @@
     <script src="./assets/mdb/js/bootstrap.js"></script>
     <script src="./assets/mdb/js/mdb.js"></script>
     <!-- TEAM SCRIPTS -->
-    <script src="./assets/TeamFiles/js/uiux.js"></script>
+    <script src="./assets/TeamFiles/js/landingPage.js"></script>
 
-    <script src="./assets/TeamFiles/js/search.js"></script>
-    <script src="./assets/TeamFiles/js/apis.js"></script>
-    <script src="./assets/TeamFiles/js/google-api.js"></script>
-    <script src="./assets/TeamFiles/js/getposition.js"></script>
 </body>
 
 </html>

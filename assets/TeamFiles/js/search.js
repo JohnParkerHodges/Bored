@@ -19,7 +19,7 @@ $("#clickSearch").on("click", function() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        //window.location.replace('./index.html');
+        //window.location.replace('./home.html');
         console.log(response);
 
         const events = response._embedded.events;
