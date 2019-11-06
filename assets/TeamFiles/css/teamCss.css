@@ -24,11 +24,11 @@ a.category {
     padding-left: 20px;
 }
 
-<<<<<<< HEAD
 a.category>i {
 position: relative;
     right: 5px;
-=======
+}
+
 li .collapsible-header {
     font-size: 0.9rem !important;
     padding: 0 !important;
@@ -36,5 +36,4 @@ li .collapsible-header {
 
 .whiteCard {
     background-color: white;
->>>>>>> a449035d6d49b97edba23fbd27910406a61b70ca
 }
