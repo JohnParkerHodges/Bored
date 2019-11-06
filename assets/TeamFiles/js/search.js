@@ -5,7 +5,7 @@ $("#clickSearch").on("click", function() {
   const queryURL =
     "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
     zip +
-    "&startDate=today&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
+    "&startDate=today&radius=10000&apikey=lprFuKAwJA99Ym3lTZLv5pQKagAMlWVT";
   console.log(zip);
 
   jQuery.ajaxPrefilter(options => {
