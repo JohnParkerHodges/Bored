@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <!-- TEAM STYLESHEETS -->
     <link rel="stylesheet" href="./assets/TeamFiles/css/teamCss.css">
+    <link rel="stylesheet" href="./assets/TeamFiles/css/startPage.css">
 </head>
 
 <body class="hidden-sn white-skin">
-
     <!--Double navigation-->
     <header>
         <!-- Sidebar navigation -->
@@ -115,47 +115,50 @@
     </header>
     <!--/.Double navigation-->
 
+
     <!--Main Layout-->
     <main>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col">
+                <!-- Card -->
+                <div class="card card-cascade wider reverse">
 
-        <div class="container" id="mainBody">
-            <!-- delete after -->
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                        <!--Google map-->
+                        <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
 
+                        <!--Google Maps-->
 
-
-        </div>
-
-
-
-
-        <!-- User Modal -->
-        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
                     </div>
-                    <div class="modal-body">
-                        <div id="userFavorites"></div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+
+                        <!-- Title -->
+                        <h4 class="card-title"><strong>Fill in your zipcode or allow us to use your location with the crosshairs</strong></h4>
+                        <!-- Text -->
+                        <div class="md-form input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Zipcode" aria-label="Zipcode" aria-describedby="material-addon1">
+                            <div class="input-group-append flex-nowrap">
+                                <span class="input-group-text md-addon" id="material-addon1"><a href="#">Go</i></a></span>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text md-addon" id="material-addon1"><a href="#"><i class="fas fa-crosshairs"></i></a></span>
+                            </div>
+                        </div>
+
+
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="userLogOut" onclick="userLogOut()">Log Out</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+
                 </div>
+                <!-- Card -->
             </div>
+            <div class="col-2"></div>
         </div>
-
-
-
-
-
-
-
         <!--Modal: Login / Register Form-->
         <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog cascading-modal" role="document">
@@ -169,11 +172,11 @@
                         <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
-                                Account</a>
+                                    Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-fill-drip"></i>
-                                Theme</a>
+                                    Theme</a>
                             </li>
                         </ul>
 
@@ -293,7 +296,11 @@
         <!--Modal: Login / Register Form-->
 
 
+
+
+
     </main>
+
     <!--Main Layout-->
 
 
