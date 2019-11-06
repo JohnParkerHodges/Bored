@@ -79,57 +79,113 @@
 <body>
 
     <!-- Main Navigation -->
-    <header>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container smooth-scroll">
-                <a class="navbar-brand" href="#"><strong>MDB</strong></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team" data-offset="60">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products" data-offset="60">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery" data-offset="60">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact" data-offset="60">Contact</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                    </form>
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav">
+        <ul class="custom-scrollbar">
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper waves-light">
+                    <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
                 </div>
-            </div>
-        </nav>
+            </li>
+            <!--/. Logo -->
+            <!--Social-->
+            <li>
+                <ul class="social">
+                    <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook-f"> </i></a></li>
+                    <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
+                    <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus-g"> </i></a></li>
+                    <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
+                </ul>
+            </li>
+            <!--/Social-->
 
-        <!-- Intro Section -->
-        <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(assets/TeamFiles/images/starry_sky_4k_8k-7680x4320.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <div class="mask rgba-stylish-light">
-                <div class="container h-100 d-flex justify-content-center align-items-center">
-                    <div class="row pt-5 mt-3">
-                        <div class="col-md-12 mb-3">
-                            <div class="intro-info-content text-center">
-                                <h1 class="display-3 white-text mb-5 wow fadeInDown" data-wow-delay="0.3s">ABOUT <a class="white-text font-weight-bold">US</a></h1>
-                                <h5 class="text-uppercase white-text mb-5 mt-1 font-weight-bold wow fadeInDown" data-wow-delay="0.3s">Lorem ipsum dolor sit amet consectetur. </h5>
-                            </div>
+            <!-- Side navigation links -->
+            <!-- Event Categories -->
+            <ul class="list-unstyled">
+                <p class="ml-3 mt-1 category"><i class="fas fa-filter pr-1"></i>Events by Category</p>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-ticket-alt pr-1"></i>Shows</a>
+                </li>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-football-ball pr-1"></i>Sports</a></li>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-hotel pr-1"></i>Festivals</a>
+                </li>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-music pr-1"></i>Music</a></li>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-film pr-1"></i>Movies</a></li>
+                <li><a href="#" class="waves-effect mt-1 category"><i class="fas fa-utensils pr-1"></i>Food</a></li>
+            </ul>
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <!-- Info Categories -->
+                    <li><a class="collapsible-header waves-effect arrow-r ml-3"><i
+                                        class="fas fa-info-circle pr-1"></i>About !Bored<i
+                                        class="fas fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect"><i class="far fa-address-card pr-1"></i>!Bored
+                                                Creators</a></li>
+                                <li><a href="#" class="waves-effect"><i
+                                                    class="far fa-question-circle pr-1"></i>FAQ</a></li>
+                                <li><a href="#" class="waves-effect"><i class="far fa-paper-plane pr-1"></i>Contact
+                                                Us</a></li>
+                                <li><a href="#" class="waves-effect"><i class="fas fa-donate pr-1"></i>Support
+                                                Us</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- User Profile Categories -->
+                    <li><a class="waves-effect" data-toggle="modal" data-target="#modalLRForm"><i class="far fa-user-circle pr-1"></i>Profile</a>
+
+                </ul>
+                </li>
+                <!--/. Side navigation links -->
+        </ul>
+        <div class="sidenav"></div>
+    </div>
+    <!--/. Sidebar navigation -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+        <!-- SideNav slide-out button -->
+        <div class="float-left">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn mr-auto">
+            <p class="navbarTitle">!Bored</p>
+        </div>
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-home pr-1"></i><span
+                                class="clearfix d-none d-sm-inline-block">Home</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./userDash.html"><i class="fas fa-clipboard-list "></i> <span
+                                    class="clearfix d-none d-sm-inline-block"> Dashboard </span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="userLogOut()"><i class="fas fa-sign-out-alt pr-1"></i><span class="clearfix d-none d-sm-inline-block">Log Out</span></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.Navbar -->
+    </header>
+    <!--/.Double navigation-->
+
+    <!-- Intro Section -->
+    <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(assets/TeamFiles/images/starry_sky_4k_8k-7680x4320.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="mask rgba-stylish-light">
+            <div class="container h-100 d-flex justify-content-center align-items-center">
+                <div class="row pt-5 mt-3">
+                    <div class="col-md-12 mb-3">
+                        <div class="intro-info-content text-center">
+                            <h1 class="display-3 white-text mb-5 wow fadeInDown" data-wow-delay="0.3s">ABOUT <a class="white-text font-weight-bold">US</a></h1>
+                            <h5 class="text-uppercase white-text mb-5 mt-1 font-weight-bold wow fadeInDown" data-wow-delay="0.3s">Lorem ipsum dolor sit amet consectetur. </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </header>
     <!-- Main Navigation -->
