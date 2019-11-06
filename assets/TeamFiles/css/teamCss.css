@@ -1,13 +1,17 @@
-html, body {
+html,
+body {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
+
 /* NavBars Styling */
+
 a.button-collapse>i {
     position: relative;
     bottom: 3px;
     left: 2px;
 }
+
 .navbarTitle {
     font-family: 'Fontdiner Swanky', cursive !important;
     color: #ff7a87;
@@ -23,4 +27,8 @@ a.button-collapse>i {
 li .collapsible-header {
     font-size: 0.9rem !important;
     padding: 0 !important;
+}
+
+.whiteCard {
+    background-color: white;
 }
